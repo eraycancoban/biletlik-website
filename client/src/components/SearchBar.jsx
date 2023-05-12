@@ -46,16 +46,18 @@ const SearchBar = () => {
       <div>
         <CgSearch id="search-icon" />
         <input placeholder='Type to search...' className='search-input'  value={wordEntered} onChange={handleFilter} />
-        <div className='dataResult'>
-        {filteredData.slice(0, 15).map((value, key) => {
+      
+        {filteredData.length > 0 && filteredData.slice(0, 15).map((value, key) => {
             return (
               //linkler tiklanmiyo aga ayrica css duzeltilmeli link kismi olmadi sonra 
+              <div className='dataResult'>
               <a className="dataItem"  target="_blank" href={'http://localhost:3000/moviedetails/?movie_id='+value.movie_id}key={value.movie_id} >
                 <p>{value.title} </p>
-              </a>
+              </a> </div>
             );
+           
           })}
-        </div>
+        
       </div>
         
         
