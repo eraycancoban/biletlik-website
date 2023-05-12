@@ -1,0 +1,409 @@
+$darkgray: #201F1F;
+$yellow: #E3CF16;
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+    
+    font-family: 'Sora', sans-serif;
+    
+    .container {
+        .link{
+            text-decoration: none;
+            color: inherit;  
+        }
+
+        // LOGIN & REGISTER
+        .auth {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: $darkgray;
+
+            h1{
+                font-size: 20px;
+                color: #E3CF16;
+                margin-bottom: 20px;
+            }
+
+       
+            form{
+                display: flex;
+                flex-direction: column;
+                padding: 50px;
+                background-color: white;
+                width: 200px;
+                gap: 20px;
+        
+                input {
+                    padding: 10px;
+                    border: none;
+                    border-bottom: 1px solid gray;
+                }
+
+                button {
+                    padding: 10px;
+                    border: none;
+                    background-color: #E3CF16;
+                    color: #201F1F;
+                    cursor: pointer;
+                }
+
+                p {
+                    font-style: 12px;
+                    color: red;
+                    text-align: center;
+                }
+
+                span {
+                    font-size: 12px;
+                    text-align: center;
+                }
+            }
+     
+        }
+    
+        // NAVBAR 
+        .navbar{
+            .container{
+                background-color: #201F1F;
+                padding: 10px 0px;
+                display: flex;
+                justify-content: space-between;
+                margin:auto;
+                color: white;
+                
+                .logo{
+                    width: auto;
+                    height: 75px;
+                    padding-left: 20px;
+                }
+                
+                .searchBarDiv {
+                    position: relative;
+                }
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+                .input-wrapper {
+                    background-color: white;
+                    width: 100%;
+                    border-radius: 20px;
+                    height: 2.5rem;
+                    padding: 0 50px;
+                    display: flex;
+                }
+
+                input {
+                    background-color: transparent;
+                    border: none;
+                    height: 100%;
+                    font-size: 1.25rem;
+                    width: 100%;
+                    margin-left: 10px;
+                }
+
+                input:focus {
+                    outline: none;
+                }
+                
+                #search-icon {
+                    color: #201F1F;
+                    height: 42px;
+                    width: 40px;
+                    padding-right: 5px;
+                }
+
+                .searchBarDiv {
+                    position: relative;
+                }
+                
+                .searchBarDiv input[type=text] {
+                    height: 35px;
+                    width: 500px;
+                    margin: 0;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                }
+                
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+                .links{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    margin-right: 30px;
+                }
+                h6 {
+                    font-size: 16px;
+                    font-weight: 300;
+                }
+                span{
+                    cursor: pointer;
+                }
+            }
+        }
+
+        // FOOTER
+
+        footer {
+            margin-top: 10%;
+            padding: 100px;
+            display: flex;
+            font-size: 12px;
+            justify-content: space-between;
+            flex-direction: column;
+            color: white;
+            font-size: 18px;
+            
+            .links {
+                flex-direction: column;
+                padding-left: 6px;                
+                padding-top: 10px;
+            }
+            img{
+                width: 100px;
+                margin-right: 10px;
+            }
+            background-color: #201F1F;
+        }
+        
+        // CATEGORY
+    
+        .category {
+            margin: 10% 18%;
+            .filter-container {
+                padding-bottom: 2rem;
+            }
+            .filter-container button {
+                margin-right: 2rem;
+                min-width: 5rem;
+                padding: 0.5rem 1rem;
+                border: none;
+                background: white;
+                color: #201F1F;
+                border-radius: 1rem;
+                border: 2px solid rgb(30, 43, 71);
+                font-weight: bold;
+                cursor: pointer;
+            }
+            button.active {
+                background: #201F1F;
+                color: white;
+            }
+
+            .popular-movies {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-column-gap: 2rem;
+                grid-row-gap: 3rem;
+
+                img {
+                    cursor: pointer;
+                    width: 100%;
+                    height: 40vh;
+                    object-fit: cover;
+                    border-radius: 1rem;
+                    margin-bottom: 1rem;
+                }
+                h2 {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        //searchbar burdan sonrasini ekledim
+        .dataResult {
+            margin-top: 5px;
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            overflow: hidden;
+            overflow-y: auto;
+          }
+          
+          .dataResult::-webkit-scrollbar {
+            display: none;
+          }
+          
+          .dataResult .dataItem {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            color: black;
+          }
+        
+        // MOVIE DETAILS
+        
+        .movie-details {
+            .movie-banner {
+                position: absolute;
+                width: 100%;
+                height: 50rem;
+                mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 30%, transparent 100%);
+            }
+
+            .movie-details-box {
+                margin-top: 585px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                position: relative;
+                
+                .details-movie {
+                    margin-left: 50px;
+                    .film-text {
+                        padding-bottom: 35px;
+                        font-size: 50px;
+                    }
+                }
+                .details-seans {
+                    margin-right: 50px;
+                }
+            }
+
+        }
+        .movie-container {
+            margin: 20px 0;
+        }
+
+            .movie-container select {
+                background-color: #fff;
+                border: 0;
+                border-radius: 5px;
+                font-size: 14px;
+                margin-left: 10px;
+                padding: 5px 15px 5px 15px;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                appearance: none;
+            }
+
+        .container-ticketsale {
+            perspective: 1000px;
+            margin-bottom: 30px;
+            margin-left: 850px;
+        }
+        .center-screen {
+            position: fixed;
+            top: 46%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .seat {
+            background-color: #444451;
+            height: 20px;
+            width: 24px;
+            margin: 3px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+            .seat.selected {
+                background-color: #fff200;
+            }
+
+            .seat.occupied {
+                background-color: #fff;
+            }
+
+            .seat:nth-of-type(2) {
+                margin-right: 18px;
+            }
+
+            .seat:nth-last-of-type(2) {
+                margin-left: 18px;
+            }
+
+            .seat:not(.occupied):hover {
+                cursor: pointer;
+                transform: scale(1.2);
+            }
+
+        .showcase .seat:not(.occupied):hover {
+            cursor: default;
+            transform: scale(1);
+        }
+.showcase {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 10px 800px;
+            border-radius: 5px;
+            color: #777;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 200px;
+        }
+
+            .showcase li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 10px;
+            }
+
+                .showcase li small {
+                    margin-left: 10px;
+                }
+
+        .row {
+            display: flex;
+        }
+
+        .screen {
+            background-color: #fff;
+            height: 100px;
+            width: 25%;
+            margin: 15px 0;
+            transform: rotateX(-45deg);
+            box-shadow: 0 3px 10px rgba(255, 255, 255, 0.75);
+            position: relative;
+            z-index: 1;
+        }
+
+        p.text {
+            margin: 5px 0;
+        }
+
+            p.text span {
+                color: #fff200;
+            }
+        .beyaz-text,
+        .sari-text {
+            display: inline-block;
+            margin-left: -4px; 
+        }
+
+        .beyaz-text {
+            color: white;
+        }
+
+        .sari-text {
+            color: yellow;
+        }
+        .background-ts {
+            width: 100%;
+            height: 100vh;
+            background-color: #000000; /* Arka plan rengini burada değiştirebilirsiniz */
+          }
+        .seat-number {
+            font-size: 12px;
+            margin-left: 3px;
+          }
+    }
+}
