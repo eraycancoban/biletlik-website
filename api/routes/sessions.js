@@ -6,7 +6,7 @@ const router = express.Router();
 
 
 router.post("/get-session",getSession)
-router.get("/get-all",getAll)
+router.get("/getAll/:id",getAll)
 router.get("/gets",getz)
 router.delete("/delete/:id",deleteS)
 

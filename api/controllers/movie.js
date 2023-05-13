@@ -17,7 +17,7 @@ export const addMovie = (req, res) => {
 }
 
 export const getBanners = (req, res) => {
-    const sqlSelect = "SELECT image_banner,movie_id from movies limit 5"
+    const sqlSelect = "select * from moviebanners limit 5"
 
     db.query(sqlSelect, (err, data) => {
     if (err) return res.json(err)
@@ -26,8 +26,18 @@ export const getBanners = (req, res) => {
 }
 
 
-export const getPosters = (req, res) => {
-    const sqlSelect = "SELECT * from movies"
+export const getPoster = (req, res) => {
+    const sqlSelect = "select * from moviePoster "
+
+    db.query(sqlSelect, (err, data) => {
+    if (err) return res.json(err)
+    return res.json(data)
+    })
+}
+
+
+export const getTitle = (req, res) => {
+    const sqlSelect = "SELECT * from movieTitle"
 
     db.query(sqlSelect, (err, data) => {
     if (err) return res.json(err)

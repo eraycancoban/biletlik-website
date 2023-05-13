@@ -31,6 +31,15 @@ import bcrypt from "bcryptjs";
 
    }
 
+   export const getUser = (req, res) => {
+    const userId=req.params.id;
+    const query = "SELECT * FROM users where user_id=?"
+    db.query(query,userId, (err, data) => {
+        if (err) return res.json(err);
+        return res.json(data);
+    })
+}
+
     export const getUsers = (req, res) => {
         const query = "SELECT * FROM users"
         db.query(query, (err, data) => {

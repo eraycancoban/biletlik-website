@@ -1,14 +1,16 @@
 import express from "express";
-import { addMovie, getBanners,getPosters,getMovie,getz,deleteM } from "../controllers/movie.js";
+import { addMovie, getBanners,getTitle,getMovie,getz,deleteM,getPoster } from "../controllers/movie.js";
 
 const router = express.Router();
 
 
 router.get("/get",getz)
 
+router.get("/getPoster", getPoster)
+
 router.post("/movie",addMovie)
 
-router.get("/posters",getPosters)
+router.get("/titles",getTitle)
 
 router.get("/banners",getBanners)
 

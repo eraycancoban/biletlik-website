@@ -1,17 +1,20 @@
 import  {db} from "../db.js";
 
 export const buyTicket = (req, res) => {
-    const query= "INSERT INTO bookings (`session_id`,`user_id`,`seat_number`) VALUES (?)" 
-    const values = [
-        parseInt(req.body.session_id),
-        parseInt(req.body.user_id),
-        parseInt(req.body.seat_number),]
+    const tickets = req.body.tickets;
+
+    const query = "INSERT INTO bookings (`session_id`, `user_id`, `seat_number`) VALUES ?";
+    const values = tickets.map((ticket) => [
+        parseInt(ticket.session_id),
+        parseInt(ticket.user_id),
+        parseInt(ticket.seat_number),
+    ]);
 
     db.query(query, [values], (err, data) => {
         if (err) return res.json(err);
-        return res.json("bilet alindi");
-    })
-}
+        return res.json("biletler alindi");
+    });
+};
 
     export const getTicket = (req, res) => {
         const query = "SELECT * FROM bookings"
@@ -20,6 +23,16 @@ export const buyTicket = (req, res) => {
             return res.json(data);
         })
     }
+
+    export const myTicket = (req, res) => {
+        const Id=req.params.id;
+        const query = "SELECT * FROM myticket where user_id=?"
+        db.query(query,Id, (err, data) => {
+            if (err) return res.json(err);
+            return res.json(data);
+        })
+    }
+
 
     export const deleteTicket =(req,res)=>{
         const ticketId=req.params.id;

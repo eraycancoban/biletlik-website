@@ -13,9 +13,9 @@ export const getSession = (req, res) => {
 
     
 export const getAll = (req, res) => {
+    const Id=req.params.id;
     const query= "Select * from  sessions where movie_id = ? "
-    const value = req.body.movie_id;
-    db.query(query, value, (err, data) => {
+    db.query(query, Id, (err, data) => {
         if (err) return res.json(err);
         return res.json(data);
     })}
