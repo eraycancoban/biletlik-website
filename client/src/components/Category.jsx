@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import axios from 'axios';
 
 function Category() {
-    const[movies,setMovies]=useState([]);
     const [popular, setPopular] = useState([]);
     const [filtered, setFiltered] = useState([]);
     const [activeCategory, setActiveCategory] = useState(0);
@@ -15,7 +14,7 @@ function Category() {
     useEffect(()=>{
     const fetchMovie= async()=>{
         try{
-        const res = await axios.get('http://localhost:8800/movies/get')
+        const res = await axios.get('http://localhost:8800/movies/getPoster')
         setPopular(res.data);
         setFiltered(res.data);
         }

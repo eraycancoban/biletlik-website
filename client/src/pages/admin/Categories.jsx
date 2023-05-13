@@ -43,7 +43,7 @@ useEffect(()=>{
           {cats.map(cat=>(
           <tr key={cat.category_id}>
             <th className="tableCell"><input type="text" name="" id="" value={cat.category_id}/></th>
-            <th className="tableCell"><input type="text" name="" id="" value={cat.categorie_name}/></th>
+            <th className="tableCell"><input type="text" name="" id="" value={cat.category_name}/></th>
             <th  className="tableCell"><input type="button" value="sil"  onClick={()=>handleDelete(cat.category_id)} /> </th>              
             </tr>
           ))}

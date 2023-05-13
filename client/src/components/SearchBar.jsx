@@ -12,7 +12,7 @@ const SearchBar = () => {
   useEffect(()=>{
   const fetchMovie= async()=>{
     try{
-      const res = await axios.get('http://localhost:8800/movies/posters')
+      const res = await axios.get('http://localhost:8800/movies/titles')
       setMovies(res.data)
     }
     catch(err){
@@ -43,10 +43,10 @@ const SearchBar = () => {
 
   return (
     <div className='input-wrapper'>
-      <div>
-        <CgSearch id="search-icon" />
+    
+        <CgSearch id="search-icon" /><div>
         <input placeholder='Type to search...' className='search-input'  value={wordEntered} onChange={handleFilter} />
-      
+        
         {filteredData.length > 0 && filteredData.slice(0, 15).map((value, key) => {
             return (
               //linkler tiklanmiyo aga ayrica css duzeltilmeli link kismi olmadi sonra 

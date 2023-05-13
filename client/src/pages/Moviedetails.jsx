@@ -30,7 +30,7 @@ const[sessions,setSessions]=useState([]);
 useEffect(()=>{
   const fetchSession= async()=>{
     try{
-      const res = await axios.get('http://localhost:8800/sessions/gets')
+      const res = await axios.get('http://localhost:8800/sessions/getAll/'+id)
       setSessions(res.data)
     }
     catch(err){

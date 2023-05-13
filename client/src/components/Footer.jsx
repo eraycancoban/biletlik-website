@@ -8,7 +8,7 @@ const Footer = () => {
     <footer>
       <img src={Logo}></img>
       <div className='links'>
-       <div><Link className='link' to="/iletisim">İletişim</Link></div>
+       <div><Link className='link' to="/contact">İletişim</Link></div>
        <div><Link className='link' to="/hakkimizda">Hakkımızda</Link></div>
        <div><Link className='link' to="/sss">Sık Sorulan Sorular</Link></div>
       </div>

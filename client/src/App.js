@@ -20,6 +20,9 @@ import Movies from "./pages/admin/Movies";
 import Screens from "./pages/admin/Screens";
 import Tickets from "./pages/admin/Tickets";
 import Categories from "./pages/admin/Categories";
+import Sss from "./pages/Sss";
+import Hakkimizda from "./pages/Hakkimizda";
+import MyTickets from "./pages/MyTickets";
 import "./style.scss"
 
 const Layout = ()=>{
@@ -91,6 +94,18 @@ const router = createBrowserRouter([
     path: "/kategoriler",
     element: <Categories/>,
   },
+  {
+    path:"/hakkimizda",
+    element: <Hakkimizda/>,
+  },
+  {
+    path:"/sss",
+    element: <Sss/>,
+  },
+  {
+    path:"/myTickets",
+    element: <MyTickets/>,
+  }
 ]);
 
 

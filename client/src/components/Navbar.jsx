@@ -26,10 +26,12 @@ const Navbar = () => {
         
         
         <div className="links">
-          <Link className='link' to="/login">Giriş Yap</Link>
-          <Link className='link' to="/register">Üye Ol</Link>
-          <span>{currentUser?.username}</span>
-          <span onClick={ logout } className='link'>Çıkış Yap</span>
+          <Link className='link' to="/login">{currentUser? null:<span>Giriş Yap</span>  }</Link>
+          <Link className='link' to="/register">{currentUser? null:<span>Üye Ol</span>  }</Link>
+          <Link className='link' to="/accountdetails">{currentUser?.username}</Link>
+          <Link className='link' to="/myTickets">{currentUser? <span>Biletlerim</span> : null}</Link>
+          {currentUser? <span onClick={ logout } className='link'>Çıkış Yap</span> : null}
+          
         </div>
       </div>
     </div>

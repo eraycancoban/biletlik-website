@@ -7,6 +7,7 @@ import "./adminpanel.scss"
 const AdminPanel = () => {
 
 const[users,setUsers]=useState([]);
+const[user,setUser]=useState([]);
 
 const handleDelete= async (id)=>{
   try{
@@ -47,9 +48,9 @@ useEffect(()=>{
 
             </tr>
             <tr>
-              <th className="tableCell"><input type="text" name="" id="" /></th>
-              <th className="tableCell"><input type="text" name="" id="" /></th>
-              <th className="tableCell"><input type="text" name="" id="" /></th>
+              <th className="tableCell"><input type="text" name="username" id="" /></th>
+              <th className="tableCell"><input type="text" name="email" id="" /></th>
+              <th className="tableCell"><input type="text" name="password" id="" /></th>
               <th className="tableCell"><input type="button" value="ekle" /></th>
             </tr>
           

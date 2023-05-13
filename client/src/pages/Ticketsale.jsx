@@ -1,6 +1,8 @@
 import React,{ useContext ,useEffect, useState} from 'react'
 import { AuthContext } from '../context/authContext';
 import axios from 'axios';
+import Navbar from '../components/Navbar';
+import Footer from "../components/Footer"
 
 
 const Ticketsale = () => {
@@ -13,11 +15,7 @@ const Ticketsale = () => {
 
   const [selectedSeats, setSelectedSeats] = React.useState([]);
   const [seatNumbers, setSeatNumbers] = React.useState([...Array(48)].map((_, index) => index + 1));
-  const [ticket,setTickets] = useState({
-    user_id:currentUser.user_id,
-    session_id:id,
-    seat_number:null,
-  });
+  const [ticket,setTickets] = useState([]);
   
   useEffect(()=>{
     const fetchSeat= async()=>{
@@ -51,26 +49,29 @@ const Ticketsale = () => {
     }
   };
 
-  ticket.seat_number=selectedSeats[0]+1;
-  console.log(ticket)
-
-  const handleClick = async e =>{
+  ticket.seat_number={selectedSeats}+1;
+ 
+  const handleClick = async e => {
     try{
-      await axios.post("http://localhost:8800/bookings/buy-Ticket",ticket);
-      console.log("Ticket Succesfully Bought");
+      const newTickets = selectedSeats.map((seat) => ({
+        user_id: currentUser.user_id,
+        session_id: id,
+        seat_number: seat + 1,
+      }));
+      await axios.post("http://localhost:8800/bookings/buy-Ticket", { tickets: newTickets });
+      console.log("Tickets Successfully Bought");
       window.location.reload()
     }
     catch{
-      setError(err.response.data)}
-  }
+      setError(err.response.data)
+    }
+  };
 
 
   return (
     <div className='background-ts'>
-        <h1>
-          <span className="beyaz-text">BILET</span>
-          <span className="sari-text">LIK</span>
-        </h1>
+      <Navbar/>
+       
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -141,8 +142,9 @@ const Ticketsale = () => {
           </div>
           <button onClick={handleClick}>Satın Al</button>
         </div>
-        
+        <Footer/>
       </div> 
+      
   )
 }
 
