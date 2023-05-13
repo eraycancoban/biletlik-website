@@ -44,10 +44,10 @@ useEffect(()=>{
         
           {tickets.map(ticket=>(
           <tr key={ticket.booking_id}>
-            <th className="tableCell"><input type="text"  name= "booking_id"  value={ticket.booking_id}/></th>
-            <th className="tableCell"><input type="text"  name= "session_id"  value={ticket.session_id}/></th>
-            <th className="tableCell"><input type="text"  name="user_id" value={ticket.user_id}/></th>
-            <th className="tableCell"><input type="text"  name="seat_number"  value={ticket.seat_number}/></th>
+            <th className="tableCell">{ticket.booking_id}</th>
+            <th className="tableCell">{ticket.session_id}</th>
+            <th className="tableCell">{ticket.user_id}</th>
+            <th className="tableCell">{ticket.seat_number}</th>
             <th  className="tableCell"><input type="button" value="sil" onClick={()=>handleDelete(ticket.booking_id)} /> </th>              
             </tr>
           ))}

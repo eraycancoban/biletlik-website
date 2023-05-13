@@ -4,13 +4,7 @@
     .homeContainer {
       flex: 6;
       margin: 0 0 0 2rem;
-      .widgets,
-      .charts {
-        display: flex;
-        padding: 20px;
-        gap: 20px;
-      }
-  
+     
     }
     .tableCell{
       background-color: rgba(104, 102, 87, 0.473);
@@ -24,17 +18,22 @@
     table{
       margin-top: 5%;
       margin-left: 5%;
+      margin-right:5%;
       background-color: rgba(235, 122, 16, 0.527);
-      border-radius: 2%;
+      border-radius: 1%;
     }
     input[type=text]{
       border-radius:5%;
       border-color: rgb(255, 255, 255);
       font-size: large;
-      width: min-content;
+      width: 130px;
       
     }
-   
+    img{
+      max-width: 150px;
+      max-height: 250px;
+    }
+
     input[type=button]{
       background-color: rgb(59, 59, 59);
       border-color: black;

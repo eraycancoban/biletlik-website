@@ -44,9 +44,9 @@ useEffect(()=>{
               <th>capacity</th>
             </tr>
             <tr>
-              <th className="tableCell"><input type="text" name="" id="" /></th>
-              <th className="tableCell"><input type="text" name="" id="" /></th>
-              <th className="tableCell"><input type="text" name="" id="" /></th>
+              <th className="tableCell"><input type="text" name=""  /></th>
+              <th className="tableCell"><input type="text" name=""  /></th>
+              <th className="tableCell"><input type="text" name=""  /></th>
               <th><input type="button" value="ekle" /></th>
             </tr>
           </table>
@@ -59,9 +59,9 @@ useEffect(()=>{
             </tr>
           {screens.map(screen=>(
           <tr key={screen.screen_id}>
-            <th className="tableCell"><input type="text" name="" id="" value={screen.screen_id}/></th>
-            <th className="tableCell"><input type="text" name="" id="" value={screen.name}/></th>
-            <th className="tableCell"><input type="text" name="" id="" value={screen.capacity}/></th>
+            <th className="tableCell">{screen.screen_id}</th>
+            <th className="tableCell">{screen.name}</th>
+            <th className="tableCell">{screen.capacity}</th>
             <th  className="tableCell"><input type="button" value="sil" onClick={()=>handleDelete(screen.screen_id)}  /> </th>    
           </tr>
           ))}

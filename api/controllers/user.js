@@ -3,20 +3,18 @@ import bcrypt from "bcryptjs";
 
 
    export const updateUser =(req,res)=>{
-    const userId=req.params.id;
-    const q="Update users Set `user_id`=?,`username`=?,`email`=?, `password`=? where user_id=?"
-
+    const q="Update users Set `username`=?,`email`=?, `password`=? where `user_id`=?"
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt)
 
     const values=[
-        req.body.user_id,
         req.body.username,
         req.body.email,
         hash,
+        req.body.user_id 
     ]
 
-    db.query(q,[...values,userId], (err, data) => {
+    db.query(q,values, (err, data) => {
         if (err) return res.json(err);
         return res.json(data);
     })}

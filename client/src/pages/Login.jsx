@@ -27,15 +27,16 @@ const Login = () => {
     e.preventDefault()
     try {
       login(user)
+    } catch (err) {
+      setError(err.response.data)
+    }
+    
       if(user.username === "admin"){
         navigate("/adminpanel")
       }
       else{
       navigate("/")
       }
-    } catch (err) {
-      setError(err.response.data)
-    }
   }
 
   return (

@@ -7,7 +7,27 @@ import "./adminpanel.scss"
 const AdminPanel = () => {
 
 const[users,setUsers]=useState([]);
-const[user,setUser]=useState([]);
+const[userU,setUserU]=useState({
+username:"",
+email:"",
+password:"",
+user_id:null,
+});
+
+const handleUpdate= async (id)=>{
+  try{
+    await axios.put('http://localhost:8800/users/update',userU)
+    window.location.reload()
+
+  }
+  catch(err){
+    console.log(err)
+  }
+}
+
+const handleChange = e =>{
+  setUserU((prev=>({...prev,[e.target.name]:e.target.value})))
+}
 
 const handleDelete= async (id)=>{
   try{
@@ -43,35 +63,31 @@ useEffect(()=>{
             <th>user_id</th>
             <th>username</th>
             <th>email</th>
-            <th>password</th>
             <th></th>
 
-            </tr>
-            <tr>
-              <th className="tableCell"><input type="text" name="username" id="" /></th>
-              <th className="tableCell"><input type="text" name="email" id="" /></th>
-              <th className="tableCell"><input type="text" name="password" id="" /></th>
-              <th className="tableCell"><input type="button" value="ekle" /></th>
-            </tr>
-          
-         
-
+          </tr>
+          <tr>
+            <th  className="tableCell"> <input type="text" name="user_id" onChange={handleChange} /></th>
+              <th className="tableCell"><input type="text" name="username"  onChange={handleChange}  /></th>
+              <th className="tableCell"><input type="text" name="email"   onChange={handleChange} /></th>
+              
+              <th className="tableCell"><input type="button" value="guncelle" onClick={handleUpdate}/></th>
+          </tr>
           </table>
           <table>
           <tr className='tableRow'>
             <th>user_id</th>
             <th>username</th>
             <th>email</th>
-            <th>password</th>
+            
             <th></th>
 
           </tr>
           {users.map(user=>(
           <tr key={user.user_id}>
-            <th  className="tableCell"> <input type="text" name="user_id" id="" value={user.user_id} /></th>
-            <th  className="tableCell"><input type="text" name="username" id="" value={user.username}  /></th>
-            <th  className="tableCell"><input type="text" name="email" id="" value={user.email}  /></th>
-            <th  className="tableCell"><input type="text" name="password" id="" value={user.password}  /></th>          
+            <th  className="tableCell"> {user.user_id} </th>
+            <th  className="tableCell">{user.username} </th>
+            <th  className="tableCell">{user.email}</th>
             <th  className="tableCell"><input type="button" value="sil" onClick={()=>handleDelete(user.user_id)} /> </th>       
             </tr>
           ))}

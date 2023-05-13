@@ -35,6 +35,25 @@ useEffect(()=>{
     <div className='home'>
       <div><SideBar/></div>
         <div className='homeContainer'>
+
+        <table>
+           <tr className='tableRow'>
+            <th>movie_id</th>
+            <th>screen_id</th>
+            <th>start</th>
+            <th>end</th>
+           </tr>
+  
+          <tr>
+            <th className="tableCell"><input type="text" /></th>
+            <th className="tableCell"></th>
+            <th className="tableCell"></th>
+            <th className="tableCell"></th>
+            <th className="tableCell"></th>
+            <th  className="tableCell"><input type="button" value="sil" /> </th>              
+          </tr>
+          </table>
+
           <table>
            <tr className='tableRow'>
             <th>session_id</th>
@@ -45,11 +64,11 @@ useEffect(()=>{
            </tr>
           {sessions.map(session=>(
           <tr key={session.session_id}>
-            <th className="tableCell"><input type="text"  name="" id="" value={session.session_id}/></th>
-            <th className="tableCell"><input type="text"  name="" id="" value={session.movie_id}/></th>
-            <th className="tableCell"><input type="text"  name="" id="" value={session.screen_id}/></th>
-            <th className="tableCell"><input type="text"  name="" id="" value={session.start}/></th>
-            <th className="tableCell"><input type="text"  name="" id="" value={session.end}/></th>
+            <th className="tableCell">{session.session_id}</th>
+            <th className="tableCell">{session.movie_id}</th>
+            <th className="tableCell">{session.screen_id}</th>
+            <th className="tableCell">{session.start}</th>
+            <th className="tableCell">{session.end}</th>
             <th  className="tableCell"><input type="button" value="sil" onClick={()=>handleDelete(session.session_id)}/> </th>              
           </tr>
           ))}

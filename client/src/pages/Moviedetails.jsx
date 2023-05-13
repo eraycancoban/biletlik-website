@@ -52,7 +52,7 @@ useEffect(()=>{
  {movies.map(movie=>(
           <div className='details-movie'>
          
-            <h4 className="film-text"></h4>
+            <h4 className="film-text"> {movie.title}</h4>
             <p className="film_detail-text">Yonetmen: {movie.director}</p>
             <p className="film_detail-text">Oyuncular: {movie.cast}</p>
             <p className="film_detail-text">Film Süresi: {movie.duration}</p>
@@ -61,12 +61,12 @@ useEffect(()=>{
           </div>
          ))} 
           
-          
+           
         <h4 className="seans_text">SEANSLAR</h4>
 
   {sessions.map(session=>(
           <div className="details-seans">
-           
+
            <Link className='link' to={`/ticketsale/?session_id=${session.session_id}`} > <p className="seans_detail-text">{session.start}</p></Link>
           
 

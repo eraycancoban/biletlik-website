@@ -1,14 +1,16 @@
 import  {db} from "../db.js";
 
 export const addMovie = (req, res) => {
-    const query= "INSERT INTO movies (`title`,`director`,`cast`,`duration`,`description`,`image`) VALUES (?)"
+    const query= "INSERT INTO movies (`title`,`director`,`cast`,`duration`,`description`,`image`,`image_banner`,`category`) VALUES (?)"
     const values = [
         req.body.title,
         req.body.director,
         req.body.cast,
         req.body.duration,
         req.body.description,
-        req.body.image]
+        req.body.image,
+        req.body.image_banner,
+        req.body.category]
 
     db.query(query, [values], (err, data) => {
         if (err) return res.json(err);

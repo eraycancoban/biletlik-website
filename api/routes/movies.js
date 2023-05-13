@@ -8,7 +8,7 @@ router.get("/get",getz)
 
 router.get("/getPoster", getPoster)
 
-router.post("/movie",addMovie)
+router.post("/addmovie",addMovie)
 
 router.get("/titles",getTitle)
 
