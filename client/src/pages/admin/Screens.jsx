@@ -37,20 +37,6 @@ useEffect(()=>{
       <div><SideBar/></div>
         <div className='homeContainer'>
 
-          <table>
-          <tr className='tableRow'>
-              <th>screen_id</th>
-              <th>name</th>
-              <th>capacity</th>
-            </tr>
-            <tr>
-              <th className="tableCell"><input type="text" name=""  /></th>
-              <th className="tableCell"><input type="text" name=""  /></th>
-              <th className="tableCell"><input type="text" name=""  /></th>
-              <th><input type="button" value="ekle" /></th>
-            </tr>
-          </table>
-
           <table >
             <tr className='tableRow'>
               <th>screen_id</th>

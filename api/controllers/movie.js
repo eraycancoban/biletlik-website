@@ -69,6 +69,7 @@ export const getz = (req, res) => {
 
 export const deleteM =(req,res)=>{
     const movieId=req.params.id;
+    
     const q="DELETE FROM movies where movie_id=?"
     db.query(q,[movieId], (err, data) => {
         if (err) return res.json(err);

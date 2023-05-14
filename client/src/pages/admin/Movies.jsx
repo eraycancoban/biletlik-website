@@ -33,6 +33,7 @@ useEffect(()=>{
   
   const handleDelete= async (id)=>{
     try{
+      console.log(id)
       await axios.delete('http://localhost:8800/movies/delete/'+id)
       window.location.reload()
     }
@@ -44,6 +45,7 @@ useEffect(()=>{
   const handleUpdate= async (id)=>{
     try{
       await axios.post('http://localhost:8800/movies/addmovie',movieA)  
+      window.location.reload()
     }
     catch(err){
       console.log(err)
@@ -55,9 +57,6 @@ useEffect(()=>{
   }
 
 
-
-
-  
   return (
     <div className='home'>
       <div><SideBar/></div>
@@ -71,7 +70,7 @@ useEffect(()=>{
               <th>description</th>
               <th>image</th>
               <th>banner</th>
-              <th>category</th>
+              <th>category</th> 
             </tr>
             <tr>
             <th className="tableCell"><input type="text" onChange={handleChange} name="title"  /></th>

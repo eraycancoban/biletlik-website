@@ -7,6 +7,12 @@ import "./adminpanel.scss"
 const Session = () => {
 
 const[sessions,setSessions]=useState([]);
+const[sessiona,setSessiona]=useState({
+  movie_id:null,
+  screen_id:null,
+  start:null,
+  end:null,
+})
 
 useEffect(()=>{
   const fetchSession= async()=>{
@@ -31,6 +37,20 @@ useEffect(()=>{
     }
   }
 
+  const handleUpdate= async (id)=>{
+    try{
+      await axios.post('http://localhost:8800/sessions/add',sessiona)  
+      window.location.reload()
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
+  
+  const handleChange = e =>{
+    setSessiona((prev=>({...prev,[e.target.name]:e.target.value})))
+  }
+
   return (
     <div className='home'>
       <div><SideBar/></div>
@@ -45,12 +65,11 @@ useEffect(()=>{
            </tr>
   
           <tr>
-            <th className="tableCell"><input type="text" /></th>
-            <th className="tableCell"></th>
-            <th className="tableCell"></th>
-            <th className="tableCell"></th>
-            <th className="tableCell"></th>
-            <th  className="tableCell"><input type="button" value="sil" /> </th>              
+            <th className="tableCell"><input type="number" onChange={handleChange} name="movie_id"/></th>
+            <th className="tableCell"><input type="number"  onChange={handleChange} name="screen_id"/></th>
+            <th className="tableCell"><input type="number"  onChange={handleChange} name="start"/></th>
+            <th className="tableCell"><input type="number" onChange={handleChange}  name="end"/></th>
+            <th  className="tableCell"><input type="button" onClick={handleUpdate} value="ekle" /> </th>              
           </tr>
           </table>
 
