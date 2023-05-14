@@ -45,30 +45,38 @@ const Accountdetails = () => {
       console.log(err)
     }
   }
-  
+
 
   return (
-    
-    <div>
-     <Navbar/>  
-     <div>
-      <h2>Uyelik Bilgileri</h2>
-      {detail.map(d=>(
-          <div className='details-movie'>
-            <h4 className="film-text"></h4>
-            <p className="film_detail-text">Kullanıcı Adı: {d.username}</p>
-            <p className="film_detail-text">E-Posta Adresi: {d.email}</p>
-          </div>
-         ))} 
-    <form>
-      <input type="Text" placeholder='Old Password' onChange={handleChange}  name='oldPassword'/>
-      <input type="text" placeholder='Password' onChange={handleChange}  name='newPassword'/>
-      <button onClick={handleClick}>Degistir</button>
+    <>
+    <Navbar/>
+    <div className='account-details'>
+      <div className='account-details-container'>
+        
+        <h2>Üyelik Bilgileri</h2>
+        {detail.map(d=>(
+            <div className='user-infos'>
+              <div className="user-name">Kullanıcı Adı:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+                <div className='aaa'> {d.username} </div> 
+              </div> 
+              <div className="user-epost">E-Posta Adresi:&nbsp;&nbsp;&nbsp;<div> {d.email} </div> </div>
+            </div>
+            ))} 
+
+            <div className='sifre-degistir-container'>
+              <div>
+                Eski Şifrenizi Giriniz: <input className='sifre' type="Text" placeholder='Eski Şifre' onChange={handleChange}  name='oldPassword'/>
+              </div>
+              <div>
+                Yeni Şifrenizi Giriniz: <input className='sifre' type="text" placeholder='Yeni Şifre' onChange={handleChange}  name='newPassword'/>
+              </div>  
+              <button className='sifre-defistir-button' onClick={handleClick}>Degistir</button>
       
-    </form>
-     </div>
-      <Footer/>
+            </div>
+        </div>
     </div>
+    <Footer/>
+    </>
   )
 }
 

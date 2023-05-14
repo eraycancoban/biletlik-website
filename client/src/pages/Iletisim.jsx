@@ -1,13 +1,13 @@
 
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from "../components/Footer"
+import SearchBar  from '../components/SearchBar'
 
 const Iletisim = () => {
   return (
     <div> 
-    <Navbar />
-    <Footer/>
+      <div className='searchBarDiv'>
+      <SearchBar />
+     </div>
   </div>
   )
 }

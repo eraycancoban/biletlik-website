@@ -10,6 +10,9 @@ const MyTickets = () => {
 
   const [tickets,setTickets]= useState([])
   const {currentUser} = useContext(AuthContext);
+
+
+  
   useEffect(()=>{
   const fetchMovie= async()=>{
     try{
@@ -26,22 +29,24 @@ const MyTickets = () => {
 
 
   return (
-    <div className='movie-details'>
-      <Navbar/>
-      
- {tickets.map(ticket=>(
-          <div key={ticket.booking_id}>
-            <h4 className="film-text"></h4>
+    <>
+    <Navbar/>
+    <div className='my-ticket'>
+
+      <div className='my-ticket-container'>
+      <h2>Biletlerim</h2>
+          {tickets.map(ticket=>(
+          <div className='ticket-details' key={ticket.booking_id}>
             <p className="film_detail-text">Film: {ticket.title}</p>
             <p className="film_detail-text">Salon: {ticket.name}</p>
-            <p className="film_detail-text">Seans: {ticket.session_id}</p>
+            <p className="film_detail-text">Seans: {ticket.start}</p>
             <p className="film_detail-text">Koltuk: {ticket.seat_number}</p>
           </div>
          ))} 
-          
-        
+      </div>
     </div>
-   
+    <Footer/>
+    </>
   )
 
 }

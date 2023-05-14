@@ -44,21 +44,23 @@ const SearchBar = () => {
   return (
     <div className='input-wrapper'>
     
-        <CgSearch id="search-icon" /><div>
-        <input placeholder='Type to search...' className='search-input'  value={wordEntered} onChange={handleFilter} />
+        <CgSearch id="search-icon" />
         
+        <div className='data-result-container'>
+
+        <input placeholder='Ara' className='search-input'  value={wordEntered} onChange={handleFilter} />
+
         {filteredData.length > 0 && filteredData.slice(0, 15).map((value, key) => {
             return (
-              //linkler tiklanmiyo aga ayrica css duzeltilmeli link kismi olmadi sonra 
               <div className='dataResult'>
-              <a className="dataItem"  target="_blank" href={'http://localhost:3000/moviedetails/?movie_id='+value.movie_id}key={value.movie_id} >
-                <p>{value.title} </p>
-              </a> </div>
+                <a className="dataItem"  target="_blank" href={'http://localhost:3000/moviedetails/?movie_id='+value.movie_id}key={value.movie_id} >
+                  <p>{value.title} </p>
+                </a> 
+              </div>
             );
            
           })}
-        
-      </div>
+          </div>
         
         
     </div>

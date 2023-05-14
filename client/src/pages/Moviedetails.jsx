@@ -44,36 +44,36 @@ useEffect(()=>{
 
   return (
     <div className='movie-details'>
-      <Navbar/>
-      {movies.map(movie=>(
-        <img className='movie-banner' src={movie.image_banner }/>
-      ))}
-        <div className="movie-details-box">
- {movies.map(movie=>(
-          <div className='details-movie'>
-         
-            <h4 className="film-text"> {movie.title}</h4>
-            <p className="film_detail-text">Yonetmen: {movie.director}</p>
-            <p className="film_detail-text">Oyuncular: {movie.cast}</p>
-            <p className="film_detail-text">Film Süresi: {movie.duration}</p>
-            <p className="film_detail-text">Açıklama: {movie.description}</p> 
-            
-          </div>
-         ))} 
-          
-           
-        <h4 className="seans_text">SEANSLAR</h4>
-
-  {sessions.map(session=>(
-          <div className="details-seans">
-
-           <Link className='link' to={`/ticketsale/?session_id=${session.session_id}`} > <p className="seans_detail-text">{session.start}</p></Link>
-          
-
-          </div>
+    <Navbar/>
+        {movies.map(movie=>(
+          <img className='movie-banner' src={movie.image_banner }/>
           ))}
-        </div>
-      <Footer/>
+          <div className="movie-details-box">
+              {movies.map(movie=>(
+              <div className='details-movie'>
+                <h4 className="film-text">{movie.title}</h4>
+                <p className="film_detail-text">Yonetmen: {movie.director}</p>
+                <p className="film_detail-text">Oyuncular: {movie.cast}</p>
+                <p className="film_detail-text">Film Süresi: {movie.duration}</p>
+                <p className="film_detail-text">Açıklama: {movie.description}</p> 
+              </div>
+           ))} 
+
+              
+          
+            {sessions.map(session=>(
+            <div className="details-seans">
+              
+              <h4 className="seans-text">Seanslar</h4>
+
+               <Link className='seans-saati-link' to={`/ticketsale/?session_id=${session.session_id}`} > 
+                <p className="seans-saati"> {session.start} </p>
+               </Link>
+
+            </div>
+            ))}
+          </div>
+    <Footer/>
     </div>
    
   )

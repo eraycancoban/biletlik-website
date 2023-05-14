@@ -9,9 +9,7 @@ $yellow: #E3CF16;
 }
 
 .app {
-    
     font-family: 'Sora', sans-serif;
-    
     .container {
         .link{
             text-decoration: none;
@@ -72,7 +70,9 @@ $yellow: #E3CF16;
     
         // NAVBAR 
         .navbar{
+            
             .container{
+                align-items: center;
                 background-color: #201F1F;
                 padding: 10px 0px;
                 display: flex;
@@ -85,18 +85,16 @@ $yellow: #E3CF16;
                     height: 75px;
                     padding-left: 20px;
                 }
-                
-                .searchBarDiv {
-                    position: relative;
-                }
-////////////////////////////////////////////////////////////////////////////////////////////////
 
+////////////////////////////////////////////////////////////////////////////////////////////////
                 .input-wrapper {
+
                     background-color: white;
                     width: 100%;
                     border-radius: 20px;
                     height: 2.5rem;
-                    padding: 0 50px;
+                    padding-left: 10px;
+                    padding-right: 5px;
                     display: flex;
                 }
 
@@ -107,6 +105,8 @@ $yellow: #E3CF16;
                     font-size: 1.25rem;
                     width: 100%;
                     margin-left: 10px;
+                    padding-right: 90px;
+
                 }
 
                 input:focus {
@@ -126,13 +126,8 @@ $yellow: #E3CF16;
                 
                 .searchBarDiv input[type=text] {
                     height: 35px;
-                    width: 500px;
-                    margin: 0;
+                    width: 400px;
                     position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    -ms-transform: translate(-50%, -50%);
-                    transform: translate(-50%, -50%);
                 }
                 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -178,7 +173,33 @@ $yellow: #E3CF16;
             }
             background-color: #201F1F;
         }
+        //searchbar burdan sonrasini ekledim
+        .data-result-container {
+            position: relative;
         
+            .dataResult {
+                position: absolute;
+                width: 300px;
+                height: 30px;
+                background-color: white;
+                overflow: hidden;
+                overflow-y: auto;
+            }
+            
+            .dataResult::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .dataResult .dataItem { 
+                width: 100%;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                color: black;
+            }
+        }
+
+
         // CATEGORY
     
         .category {
@@ -223,37 +244,103 @@ $yellow: #E3CF16;
             }
         }
 
-        //searchbar burdan sonrasini ekledim
-        .dataResult {
-            margin-top: 5px;
-            width: 300px;
-            height: 30px;
-            background-color: white;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-            overflow: hidden;
-            overflow-y: auto;
-          }
-          
-          .dataResult::-webkit-scrollbar {
-            display: none;
-          }
-          
-          .dataResult .dataItem {
-            width: 100%;
-            height: 30px;
+
+        
+  /////////////////////////////////////////////// Account Details ////////////////////////////////
+        .account-details {
             display: flex;
             align-items: center;
-            color: black;
-          }
-        
+            justify-content: center;
+            
+            .account-details-container {
+                width: 675px;
+                height: 375px;
+                border-radius: 40px;
+                display: grid;
+                align-items: start;
+                margin-top: 200px;
+                background-color: #c0c0c0;
+                
+                h2 {
+                    margin-left: 35px;
+                    margin-top: 40px;
+                }
+
+                .user-infos {
+                    margin-left: 65px;
+                    .user-name {
+                        display: flex;
+                        margin-bottom: 10px;
+                    }
+                    .user-epost {
+                        display: flex;
+                    }
+                }
+
+                .sifre-degistir-container {
+                    margin-left: 65px;
+                    
+                    .sifre {
+                        margin-bottom: 10px;
+                        border: none;
+                        height: 30px;
+                        border-radius: 7px;
+                    }
+                    .sifre:focus {
+                        outline: none;
+                    }
+                }
+                .sifre-defistir-button {
+                    align-items: center;
+                    background-color: #000000;
+                    border: 0;
+                    border-radius: 70px;
+                    box-sizing: border-box;
+                    color: #ffffff;
+                    cursor: pointer;
+                    display: inline-flex;
+                    font-size: 16px;
+                    justify-content: center;
+                    line-height: 20px;
+                    max-width: 480px;
+                    min-height: 40px;
+                    min-width: 0px;
+                    overflow: hidden;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    text-align: center;
+                    user-select: none;
+                    vertical-align: middle;
+                  }
+                  
+                  .sifre-defistir-button:hover { 
+                    background-color: #292929;
+                    color: #ffffff;
+                  }
+                  
+                  .sifre-defistir-button:active {
+                    background: #464646;
+                    color: rgb(255, 255, 255, .7);
+                  }
+                  
+
+            }
+        }
+
+
         // MOVIE DETAILS
-        
         .movie-details {
+
             .movie-banner {
                 position: absolute;
                 width: 100%;
                 height: 50rem;
                 mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 30%, transparent 100%);
+            }
+            
+            .film_detail-text {
+                line-height: 40px;
+                font-size: 18px;
             }
 
             .movie-details-box {
@@ -270,57 +357,66 @@ $yellow: #E3CF16;
                         font-size: 50px;
                     }
                 }
+                
                 .details-seans {
-                    margin-right: 50px;
+                    margin-right: 50px; 
+                    
+                    .seans-text {
+                        font-size: 50px;
+                        margin-bottom: 45px;
+                    }
+                    
+                    .seans-saati-link {
+                        max-width: 30px;
+                        max-height: 25px;
+                        text-decoration: none;    
+                    }
+
+                    .seans-saati {
+                        margin-bottom: 15px;
+                        padding: 10px;
+                        height: 25px;
+                        background: transparent;
+                        color: #000000;
+                        border-radius: 1rem;
+                        border: 1px solid rgb(0, 0, 0);
+                        font-weight: bold;
+                        text-align: center;
+                    }
+                    .seans-saati:hover {
+                        background-color: rgb(214, 214, 214);
+                    }
+
+                    
+
+
                 }
             }
 
         }
-        //Ticket Sale
-        .movie-container {
-            margin: 20px 0;
-        }
 
-            .movie-container select {
-                background-color: #fff;
-                border: 0;
-                border-radius: 5px;
-                font-size: 14px;
-                margin-left: 10px;
-                padding: 5px 15px 5px 15px;
-                -moz-appearance: none;
-                -webkit-appearance: none;
-                appearance: none;
+
+        /////////////////////////////////////////////// TİCKET SALE ////////////////////////////////
+        
+        .ticketsale {
+            position: relative;
+
+            .seat {
+                border: solid #000;
+                background-color: #777;
+                border-width: 2px;
+                height: 20px;
+                width: 24px;
+                margin: 3px;
+                border-radius: 4px;
             }
-
-        .container-ticketsale {
-            perspective: 1000px;
-            margin-bottom: 30px;
-            margin-left: 850px;
-        }
-        .center-screen {
-            position: fixed;
-            top: 46%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-        }
-
-        .seat {
-            background-color: #444451;
-            height: 20px;
-            width: 24px;
-            margin: 3px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
 
             .seat.selected {
                 background-color: #fff200;
             }
 
             .seat.occupied {
-                background-color: #fff;
+                background-color: #e6a2a2;
             }
 
             .seat:nth-of-type(2) {
@@ -335,81 +431,157 @@ $yellow: #E3CF16;
                 cursor: pointer;
                 transform: scale(1.2);
             }
-
-        .showcase .seat:not(.occupied):hover {
-            cursor: default;
-            transform: scale(1);
-        }
-.showcase {
-            background-color: rgba(0, 0, 0, 0.1);
-            padding: 10px 800px;
-            border-radius: 5px;
-            color: #777;
-            list-style-type: none;
-            display: flex;
-            justify-content: space-between;
-            margin-top: 200px;
-        }
-
-            .showcase li {
+              .showcase {
+                padding: 10px 800px;
+                border-radius: 5px;
+                color: #777;
+                list-style-type: none;
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 10px;
-            }
-
-                .showcase li small {
+                justify-content: space-between;
+                margin-top: 200px;
+ 
+                .showcase .seat:not(.occupied):hover {
+                    cursor: default;
+                    transform: scale(1);
+                }
+    
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 10px;
+                }
+    
+                li small {
                     margin-left: 10px;
                 }
-
-        .row {
-            display: flex;
-        }
-
-        .screen {
-            background-color: #fff;
-            height: 100px;
-            width: 25%;
-            margin: 15px 0;
-            transform: rotateX(-45deg);
-            box-shadow: 0 3px 10px rgba(255, 255, 255, 0.75);
-            position: relative;
-            z-index: 1;
-        }
-
-        p.text {
-            margin: 5px 0;
-        }
-
-            p.text span {
-                color: #fff200;
+    
             }
-        .beyaz-text,
-        .sari-text {
-            display: inline-block;
-            margin-left: -4px; 
-        }
+            .screen {
+                background-color: #201F1F;
+                width: 30%;
+                height: 100px;
+                position: absolute;
+                top: -75px;
+                left: 50%;
+                clip-path: polygon(0 0, 100% 0, 84% 79%, 16% 79%);
+                transform: translate(-50%, -50%);
+                p {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin: -25px 0 0 -25px;
+                    color: white;
+                    font-size: 18px;
+                }
+            }
 
-        .beyaz-text {
-            color: white;
-        }
+            .satın-al-buton {
+                margin-top: 20px;
+                align-items: center;
+                background-color: #000000;
+                border: 0;
+                border-radius: 70px;
+                box-sizing: border-box;
+                color: #ffffff;
+                cursor: pointer;
+                display: inline-flex;
+                font-size: 16px;
+                justify-content: center;
+                line-height: 20px;
+                min-height: 40px;
+                padding-left: 20px;
+                padding-right: 20px;
+                text-align: center;
+                user-select: none;
+                vertical-align: middle;
+              }
+              
+              .satın-al-buton:hover { 
+                background-color: #292929;
+                color: #ffffff;
+              }
+              
+              .satın-al-buton:active {
+                background: #464646;
+                color: rgb(255, 255, 255, .7);
+              }
+              
 
-        .sari-text {
-            color: yellow;
+
+
+            .container-ticketsale {
+                perspective: 1000px;
+                margin-bottom: 30px;
+                margin-left: 850px;
+            
+                
+                .row {
+                display: flex;
+                    .seat-number {
+                        font-size: 12px;
+                        margin-left: 3px;
+                    }
+                }
+            }
         }
-        .background-ts {
-            width: 100%;
-            height: 100vh;
-            background-color: #000000; /* Arka plan rengini burada değiştirebilirsiniz */
-          }
-        .seat-number {
-            font-size: 12px;
-            margin-left: 3px;
-          }
     }
+
+///////////// My Tickets
+
+    .my-ticket {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 200px;
+        
+        .my-ticket-container {
+            h2{
+                margin-left: 10px;
+                margin-right: 500px;
+                padding-bottom: 45px;
+            }
+            
+            padding: 30px;
+            width: 675px;
+            height: auto;
+            border-radius: 40px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+            gap: 5px;
+            background-color: #c0c0c0;
+
+            .ticket-details {
+                margin-bottom: 50px;
+                padding: 10px;
+                display: grid;
+                justify-content: center;
+                place-items: center;
+                align-content: center;
+                border-style: solid;
+                border-width: 1.5px;
+                border-radius: 5px;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
     //SSS
           
     .sss-container{
+
         max-width: 1140px;
         margin: auto;
         --background: #f2f5f7;
@@ -459,6 +631,11 @@ $yellow: #E3CF16;
         color: var(--text-secondary);
         line-height: 1.4;
       }
+
+
+
+
+
 //ABOUT US 
     .welcome_section {
         text-align: center;
@@ -469,7 +646,7 @@ $yellow: #E3CF16;
         width: 100%;
         background: #ffffff;
         margin: 0 670px;
-        margin-top: 300px;
+        margin-top: 100px;
         padding: 0px 20px;
         border-radius: 7px;
     }
@@ -558,3 +735,6 @@ $yellow: #E3CF16;
         transform: translateX(-50%) rotate(45deg);
     }
 }
+
+
+
