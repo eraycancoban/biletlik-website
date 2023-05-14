@@ -59,12 +59,11 @@ useEffect(()=>{
               </div>
            ))} 
 
-              
-          
+            <div className='seans-container'>
+            <h4 className="seans-text">Seanslar</h4>
+
             {sessions.map(session=>(
             <div className="details-seans">
-              
-              <h4 className="seans-text">Seanslar</h4>
 
                <Link className='seans-saati-link' to={`/ticketsale/?session_id=${session.session_id}`} > 
                 <p className="seans-saati"> {session.start} </p>
@@ -72,6 +71,7 @@ useEffect(()=>{
 
             </div>
             ))}
+            </div>
           </div>
     <Footer/>
     </div>

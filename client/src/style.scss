@@ -357,14 +357,19 @@ $yellow: #E3CF16;
                         font-size: 50px;
                     }
                 }
-                
+                .seans-text {
+                    display: grid;
+                    font-size: 50px;
+                    margin-bottom: 45px;
+                }
+
+                .seans-container {
+                    margin-right: 80px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
                 .details-seans {
-                    margin-right: 50px; 
-                    
-                    .seans-text {
-                        font-size: 50px;
-                        margin-bottom: 45px;
-                    }
                     
                     .seans-saati-link {
                         max-width: 30px;
@@ -375,7 +380,8 @@ $yellow: #E3CF16;
                     .seans-saati {
                         margin-bottom: 15px;
                         padding: 10px;
-                        height: 25px;
+                        width: 80px;
+                        height: 15px;
                         background: transparent;
                         color: #000000;
                         border-radius: 1rem;
@@ -735,6 +741,3 @@ $yellow: #E3CF16;
         transform: translateX(-50%) rotate(45deg);
     }
 }
-
-
-
