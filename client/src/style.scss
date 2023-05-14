@@ -203,6 +203,10 @@ $yellow: #E3CF16;
         // CATEGORY
     
         .category {
+            a {
+                text-decoration: none;
+                color: #000;
+            }
             margin: 10% 18%;
             .filter-container {
                 padding-bottom: 2rem;
