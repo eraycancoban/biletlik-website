@@ -17,7 +17,7 @@ function Filter({setActiveCategory, activeCategory, setFiltered, popular}){
             <button className={activeCategory === 0 ? "active" : ""} onClick={() => setActiveCategory(0)}>Tüm Filmler</button>
             <button className={activeCategory === 2 ? "active" : ""} onClick={() => setActiveCategory(2)}>Aksiyon</button>
             <button className={activeCategory === 1 ? "active" : ""} onClick={() => setActiveCategory(1)}>Komedi</button>
-            <button className={activeCategory === 4 ? "active" : ""} onClick={() => setActiveCategory(4)}>Korku</button>
+            <button className={activeCategory === 4 ? "active" : ""} onClick={() => setActiveCategory(4)}>Drama</button>
             <button className={activeCategory === 3 ? "active" : ""} onClick={() => setActiveCategory(3)}>Aile</button>
         </div>
     );
