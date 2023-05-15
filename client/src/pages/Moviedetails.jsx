@@ -54,7 +54,7 @@ useEffect(()=>{
                 <h4 className="film-text">{movie.title}</h4>
                 <p className="film_detail-text">Yonetmen: {movie.director}</p>
                 <p className="film_detail-text">Oyuncular: {movie.cast}</p>
-                <p className="film_detail-text">Film Süresi: {movie.duration}</p>
+                <p className="film_detail-text">Film Süresi: {movie.duration} dakika</p>
                 <p className="film_detail-text">Açıklama: {movie.description}</p> 
               </div>
            ))} 
